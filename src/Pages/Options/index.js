@@ -41,11 +41,12 @@ class Options extends Component {
                 <option value="medium">Medium</option>
                 <option value="hard">Hard</option>
             </select>
+            
+            <button onClick={this.handleSubmit}><Link to='/game'>START PLAYING</Link></button>
 
-            <input type="submit" value="Start Game" onClick={this.handleSubmit} />
         </form>
 
-        <Link to='/game'>START PLAYING</Link>
+        
         </>
         )
     }
