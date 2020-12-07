@@ -3,18 +3,18 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Home, Options, Game, Results } from './Pages';
 
 class App extends Component {
-    render() {
-      return (
-          <Router>
-              <Switch>
-                <Route exact path ='/' component={Home} />
-                <Route path ='/options' component={Options} />
-                <Route path ='/game' component={Game} />
-                <Route path ='/results' component={Results} />
-              </Switch>
-          </Router>
-      )
-    }
+  render() {
+    return (
+      <Router>
+        <Switch>
+          <Route exact path ='/' component={Home} />
+          <Route path ='/options' component={Options} />
+          <Route path ='/game' component={Game} />
+          <Route path ='/results' component={Results} />
+        </Switch>
+      </Router>
+    )
   }
+}
 
 export default App;

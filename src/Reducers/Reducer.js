@@ -1,5 +1,6 @@
 // const initState = { allPlayers:[], winner: null, loading: false };
 const initState = { data: [], noOfPlayers:3, players: [{name:"Player 1", score: 0}, {name:"Player 2", score: 0}, {name:"Player 3", score: 0}], QuestionID: 0};
+//const initState ={ totalPlayer: 3, players: [{name: "", score:0}]}, questionID:0, questions: [{ question: "", correct_answer: "", incorrect_answers: [""] }]}
 
 // {
 //     "response_code": 0,
