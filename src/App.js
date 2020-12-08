@@ -13,8 +13,8 @@ class App extends Component {
           <Route path ='/results' component={Results} />
         </Switch>
       </Router>
-    )
-  }
-}
+    );
+  };
+};
 
 export default App;

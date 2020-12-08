@@ -2,26 +2,62 @@ import Options from './index';
 import { shallow } from 'enzyme';
 
 describe('Options', () => {
-    let wrapper;
+    let wrapper, form, inputs, selects, numInput, initState, newState;
 
     beforeEach(() => {
         wrapper = shallow(<Options />)
+        form = wrapper.find('form');
     });
 
-    test('it renders a form with a number input and a submit', () => {
-        let form = wrapper.find('form');
+    test('it renders a form with two number inputs', () => {
         expect(form).toHaveLength(1);
-        const inputs = form.find('input')
+        inputs = form.find('input')
         expect(inputs).toHaveLength(2);
         expect(inputs.first().props().type).toBe('number')
     });
 
-    test('it updates state on user input', () => {
-        form = wrapper.find('form');
-        const numInput = form.find('input').first();
-        const initState = wrapper.state('noOfQuestions');
+    test('it renders a form with two select inputs', () => {
+        expect(form).toHaveLength(1);
+        selects = form.find('select')
+        expect(selects).toHaveLength(2);
+    });
+
+    test('it renders a form with a submit input', () => {
+        expect(form).toHaveLength(1);
+        inputs = form.find('input')
+        expect(inputs).toHaveLength(1);
+        expect(inputs.last().props().type).toBe('submit')
+    });
+
+    test('it updates player state on user input', () => {
+        numInput = form.find('input').first();
+        initState = wrapper.state('totalPlayers');
         numInput.simulate('change', { target: { value: 5 } })
-        const newState = wrapper.state('noOfQuestions');
+        newState = wrapper.state('totalPlayers');
+        expect(newState).not.toEqual(initState)
+    });
+
+    test('it updates question state on user input', () => {
+        numInput = form.find('input').second();
+        initState = wrapper.state('noOfQuestions');
+        numInput.simulate('change', { target: { value: 5 } })
+        newState = wrapper.state('noOfQuestions');
+        expect(newState).not.toEqual(initState)
+    });
+
+    test('it updates category state on user input', () => {
+        numInput = form.find('select').first();
+        initState = wrapper.state('category');
+        numInput.simulate('change', { target: { value: "geography" } })
+        newState = wrapper.state('category');
+        expect(newState).not.toEqual(initState)
+    });
+
+    test('it updates difficulty state on user input', () => {
+        numInput = form.find('select').first();
+        initState = wrapper.state('difficulty');
+        numInput.simulate('change', { target: { value: "hard" } })
+        newState = wrapper.state('difficulty');
         expect(newState).not.toEqual(initState)
     });
 
