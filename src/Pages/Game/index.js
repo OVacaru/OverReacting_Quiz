@@ -13,7 +13,9 @@ class Game extends Component {
                 {this.props.questions.length > 0 && this.props.questionID === this.props.questions.length ? 
                     <Results winner={this.props.players}/> :
                     <div id="gameArea">
-                        <Player player={this.props.players}/>
+                        <Player player={{
+                            totalPlayers:this.props.totalPlayers,
+                            players: this.props.players}}/>
                         <Question question={this.props.questions[this.props.questionID]}/>
                     </div>
                 }
@@ -29,4 +31,4 @@ export const mSTP = state => ({
     questions: state.questions
 });
 
-export default connect(mSTP, { Question , Results } )(Game);
+export default connect(mSTP, { Question, Results, Player } )(Game);

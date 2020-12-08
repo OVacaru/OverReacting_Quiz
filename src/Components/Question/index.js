@@ -57,4 +57,4 @@ class Question extends Component {
     };
 };
 
-export default connect(null, { nextQuestion }) (Question) ;
+export default connect(null, { nextQuestion }) (Question);
