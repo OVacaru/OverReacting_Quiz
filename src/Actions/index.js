@@ -7,13 +7,13 @@ export function getQuestions (amount, difficulty, type) {
         } catch (err) {
             console.warn(err.message);
             dispatch({ type: 'SET_ERROR', payload: err.message });
-        }
-    }
+        };
+    };
 };
 
 async function fetchQuestions (amount="10", category="9", difficulty="easy") {
     try {
-        const resp = await fetch(`https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&encode=base64`)
+        const resp = await fetch(`https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&encode=base64`);
         const data = await resp.json();
         const questions = data.results.map(
             function decodeData (question) {

@@ -12,7 +12,7 @@ describe('Game', () => {
     });
 
     test('it renders', () => {
-        let header = wrapper.find('#game');
+        let header = wrapper.find('#gamePage');
         expect(header).toHaveLength(1);
     });
 
