@@ -8,5 +8,4 @@ const Results = () =>
         <Link to='/options'> Play Again! </Link>
     </>
 
-
 export default Results;
