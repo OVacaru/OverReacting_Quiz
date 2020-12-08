@@ -8,7 +8,7 @@ class Game extends Component {
 
     render() {
         return (
-            <>
+            <div id="gamePage">
                 <p>This is the page: Game</p>
                 {this.props.questions.length > 0 && this.props.questionID === this.props.questions.length ? 
                     <Results winner={this.props.players}/> :
@@ -17,7 +17,7 @@ class Game extends Component {
                         <Question question={this.props.questions[this.props.questionID]}/>
                     </div>
                 }
-            </>
+            </div>
         );
     };
 };

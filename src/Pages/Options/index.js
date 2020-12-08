@@ -22,7 +22,7 @@ class Options extends Component {
 
     render() {
         return (
-        <div id="gameSettings">
+        <div id="optionPage">
             <p>This is the page: Options</p>
             <form onSubmit={this.handleSubmit}>
                 <label htmlFor="noOfPlayers"> How Many Players? </label>

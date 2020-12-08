@@ -37,7 +37,7 @@ class Question extends Component {
         const allAnswers = [data.correct_answer, data.incorrect_answers[0], data.incorrect_answers[1], data.incorrect_answers[2]];
         const randomAnswer = this.shuffleArray(allAnswers);
         return (
-            <>
+            <div id="questionComponent">
                 <p>This is the component: Question</p>
                 <h1>{ showQuestion }</h1> <br/>
                 {this.props.question.type === "boolean" ? 
@@ -52,7 +52,7 @@ class Question extends Component {
                         <input type="submit" value={ randomAnswer[3] } /> <br/>
                     </form>
                 }
-            </>
+            </div>
         );
     };
 };
