@@ -25,6 +25,7 @@ class Question extends Component {
 
         return (
             <>
+                <h1>Game</h1>
                 <form>
                     <h1>{showQuestion}</h1> <br/>
                     <input type="submit" value="True" onClick= {this.handleChange}/> <br/>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 //import { Link } from 'react-router-dom';
 import Question from '../../Components/Question'
+import Results from '../Results'
 import { connect } from 'react-redux';
 
 class Game extends Component {
@@ -9,10 +10,8 @@ class Game extends Component {
         console.log("Game Page has been called")
         return (
             <>
-                <h1>Game</h1>
-
                 {this.props.questions.length > 0 && this.props.questionID === this.props.questions.length ? 
-                    <p>The game has been completed</p> :
+                    <Results /> :
                     <Question question={this.props.questions[this.props.questionID]}/>
                 }
             </>
