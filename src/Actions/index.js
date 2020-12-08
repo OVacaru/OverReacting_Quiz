@@ -5,8 +5,7 @@ export function getQuestions (amount, difficulty, type) {
             const questions = await fetchQuestions(amount, difficulty, type);
             dispatch(loadQuiz(questions));
         } catch (err) {
-            console.warn(err.message);
-            dispatch({ type: 'SET_ERROR', payload: err.message });
+            dispatch(handleError(err));
         };
     };
 };
@@ -40,6 +39,10 @@ async function fetchQuestions (amount="10", category="9", difficulty="easy") {
 export const loadQuiz = (questions) => ({ type: 'LOAD_QUIZ', payload: questions });
 export const setPlayers = (noOfPlayers) => ({ type: 'SET_PLAYERS', payload: noOfPlayers});
 export const nextQuestion = () => ({type: 'LOAD_NEXT_QUESTION'});
+export const handleError = err => {
+    console.warn(err);
+    return {type: 'SET_ERROR', payload: err.message}
+}
 
 // export const loadPlayer = (players) => ({ type: 'LOAD_PLAYER', payload: {players} })
 // export const addScoretoPlayer1 = () => ({type: 'ADD_SCORE_TO_PLAYER1' })
