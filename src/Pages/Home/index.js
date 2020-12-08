@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom';
 
 class Home extends Component {
     render() {
-        console.log("Home Page has been called")
         return (
-            <>
+            <div id="homePage">
                 <h1> The Over Reacting Quiz </h1>
                 <button> <Link to='/options'> Start </Link> </button>
-            </>
+            </div>
         )
     }
 }
