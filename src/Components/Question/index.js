@@ -1,21 +1,39 @@
-import React from 'react';
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
+import { nextQuestion } from "../../Actions";
+import { connect } from 'react-redux';
+import { mSTP } from '../../Pages/Game';
 
-const Question = (potato) => {
-//class Question extends Component {
+class Question extends Component {
 
-    //render(){
-        console.log("blah blah blah")
+    handleChange = e => {
+        e.preventDefault();
+        const userAnswer = e.target.value
+        const correctAnswer = this.props.question.correct_answer;
+        if (userAnswer === correctAnswer) {
+            console.log( "You got it right!")
+            this.props.nextQuestion();
+            
+        } else {
+            console.log( "You got it wrong!")
+            this.props.nextQuestion();
+        };
+    };
+    
+    render() {
+        const showQuestion = this.props.question.question;
+        console.log("Question Component has been called");
+
         return (
             <>
-            {/* <p>{this.props.question}</p>
-            <p>{this.props.correct_answer}</p> */}
-
+                <h1>Game</h1>
+                <form>
+                    <h1>{showQuestion}</h1> <br/>
+                    <input type="submit" value="True" onClick= {this.handleChange}/> <br/>
+                    <input type="submit" value="False" onClick= {this.handleChange}/> <br/>
+                </form>
             </>
         )
-}
-    
-;
+    }
+};
 
-
-export default Question;
+export default connect(null, { nextQuestion }) (Question) ;
