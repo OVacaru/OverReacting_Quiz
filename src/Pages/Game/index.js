@@ -1,28 +1,34 @@
-import React, { Component } from 'react'
-//import { Link } from 'react-router-dom';
-import Question from '../../Components/Question'
+import React, { Component } from 'react';
+import Player from '../../Components/Player';
+import Question from '../../Components/Question';
+import Results from '../Results';
 import { connect } from 'react-redux';
 
 class Game extends Component {
-    state = { turn: 1 }
 
     render() {
         return (
-            <>
-                <h1>Game</h1>
-                {/* {this.props.data.length > 0 ? <Question question={this.props.data[this.props.QuestionID]}/> : <p>See Results</p> } */}
-                {this.props.data.length > 0 && this.props.QuestionID === this.props.data.length ? 
-                    <p>The game has been completed</p> :
-                    <Question question={this.props.data[this.props.QuestionID]}/>
+            <div id="gamePage">
+                <p>This is the page: Game</p>
+                {this.props.questions.length > 0 && this.props.questionID === this.props.questions.length ? 
+                    <Results winner={this.props.players}/> :
+                    <div id="gameArea">
+                        <Player player={{
+                            totalPlayers:this.props.totalPlayers,
+                            players: this.props.players}}/>
+                        <Question question={this.props.questions[this.props.questionID]}/>
+                    </div>
                 }
-            </>
-        )
-    }
-}
+            </div>
+        );
+    };
+};
 
-const mSTP = state => ({
-    data: state.data,
-    QuestionID: state.QuestionID
-})
+export const mSTP = state => ({
+    totalPlayers: state.totalPlayers,
+    players: state.players,
+    questionID: state.questionID,
+    questions: state.questions
+});
 
-export default connect(mSTP, {Question})(Game);
+export default connect(mSTP, { Question, Results, Player } )(Game);
