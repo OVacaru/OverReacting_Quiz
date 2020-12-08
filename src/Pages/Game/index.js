@@ -9,12 +9,12 @@ class Game extends Component {
     render() {
         console.log("Game Page has been called")
         return (
-            <>
+            <div id='game'>
                 {this.props.questions.length > 0 && this.props.questionID === this.props.questions.length ? 
                     <Results /> :
                     <Question question={this.props.questions[this.props.questionID]}/>
                 }
-            </>
+            </div>
         )
     }
 }
