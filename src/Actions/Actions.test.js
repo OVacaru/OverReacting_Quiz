@@ -32,8 +32,7 @@ describe('Actions', () => {
         })
     });
 
-
-    // describe('fetch questions', () => {
+    // describe('getQuestions', () => {
     //     it('triggers loadQuiz on successful fetch', async () => {
     //         fetch = fetch.resetMocks()
     //         let dispatch = jest.fn();

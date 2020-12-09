@@ -50,7 +50,7 @@ class Options extends Component {
                     <option value="hard"> Hard </option>
                 </select>
                 <br/>
-                <input type="submit" value="Confirm Options" onClick= {this.handleChange}/>
+                <input id='submitButton' type="submit" value="Confirm Options" onClick= {this.handleChange}/>
             </form>
             <br/>
             <Link to='/game'>START PLAYING</Link>

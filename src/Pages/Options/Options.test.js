@@ -2,14 +2,14 @@ import Options from './index';
 import { shallow } from 'enzyme';
 
 describe('Options', () => {
-    let wrapper, form, inputs, selects, numInput, initProps, newProps, getQuestionMock, setPlayerMock;
+    let wrapper, form, inputs, selects, numInput, initState, initProps, newState, newProps, getQuestionMock, setPlayerMock;
 
     beforeEach(() => {
         getQuestionMock = jest.fn();
         setPlayerMock = jest.fn();
         const stub = {
             question: [],
-            totalPlayers: 0,
+            noOfPlayers: 0,
             noOfQuestions: 0,
             category: '',
             difficulty: ''
@@ -41,9 +41,9 @@ describe('Options', () => {
 
     test('it updates player Prop on user input', () => {
         numInput = form.find('input').first();
-        initProps = wrapper.prop('totalPlayers');
+        initProps = wrapper.prop('noOfPlayers');
         numInput.simulate('change', { target: { value: 5 } })
-        newProps = wrapper.props('totalPlayers');
+        newProps = wrapper.props('noOfPlayers');
         expect(newProps).not.toEqual(initProps)
     });
 
@@ -75,6 +75,24 @@ describe('Options', () => {
     //     form = wrapper.find('form');
     //     wrapper.setProp({ noOfQuestion: '5'})
     // })
+
+    test('it setState from all props on handleChange', (e) => {
+        initState = wrapper.setState({
+            noOfPlayers: 0,
+            noOfQuestions: 0,
+            difficulty: "easy",
+            category: "geography"
+        })
+        let submitButton = form.find('#submitButton')
+        initProps = wrapper.prop({
+            noOfPlayers: 2,
+            noOfQuestions: 2,
+            difficulty: "hard",
+            category: "entertainment"
+        })
+        newState = submitButton.simulate('click', { target: { value: initProps }})
+        expect(newState).not.toEqual(initState)
+    })
 
     test('it has 1 Link', () => {
         let links = wrapper.find('Link');
