@@ -1,6 +1,5 @@
 import Options from './index';
 import { shallow } from 'enzyme';
-import { setPlayers } from '../../Actions';
 
 describe('Options', () => {
     let wrapper, form, inputs, selects, numInput, initProps, newProps, getQuestionMock, setPlayerMock;
@@ -44,15 +43,15 @@ describe('Options', () => {
         numInput = form.find('input').first();
         initProps = wrapper.prop('totalPlayers');
         numInput.simulate('change', { target: { value: 5 } })
-        newProps = wrapper.prop('totalPlayers');
+        newProps = wrapper.props('totalPlayers');
         expect(newProps).not.toEqual(initProps)
     });
 
     test('it updates question Prop on user input', () => {
-        numInput = form.find('input').second();
+        numInput = form.find('input').first();
         initProps = wrapper.prop('noOfQuestions');
         numInput.simulate('change', { target: { value: 5 } })
-        newProps = wrapper.prop('noOfQuestions');
+        newProps = wrapper.props('noOfQuestions');
         expect(newProps).not.toEqual(initProps)
     });
 
@@ -60,7 +59,7 @@ describe('Options', () => {
         numInput = form.find('select').first();
         initProps = wrapper.prop('category');
         numInput.simulate('change', { target: { value: "geography" } })
-        newProps = wrapper.prop('category');
+        newProps = wrapper.props('category');
         expect(newProps).not.toEqual(initProps)
     });
 
@@ -68,7 +67,7 @@ describe('Options', () => {
         numInput = form.find('select').first();
         initProps = wrapper.prop('difficulty');
         numInput.simulate('change', { target: { value: "hard" } })
-        newProps = wrapper.prop('difficulty');
+        newProps = wrapper.props('difficulty');
         expect(newProps).not.toEqual(initProps)
     });
 
