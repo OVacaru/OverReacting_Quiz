@@ -1,4 +1,3 @@
-
 export function getQuestions (amount, difficulty, type) {
     return async dispatch => {
         try {

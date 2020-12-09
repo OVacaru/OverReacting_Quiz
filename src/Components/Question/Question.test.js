@@ -2,20 +2,22 @@ import Question from './index';
 import { shallow } from 'enzyme';
 
 describe('Question', () => {
-    let wrapper, getQuestionMock, inputs, form;
+    let wrapper, handleSubmitMock, nextQuestionMock, inputs, form;
 
     beforeEach(() => {
-        getQuestionMock = jest.fn();
+        handleSubmitMock = jest.fn();
+        nextQuestionMock = jest.fn();
         const stub = {
             question: {
                 type: '',
                 correct_answer: '',
                 incorrect_answers: []
-            }
+            },
+            userAnswer: ""
             }
         wrapper = shallow(<Question.WrappedComponent 
             {...stub} 
-            getQuestion={getQuestionMock}
+            nextQuestion={nextQuestionMock}
              />);
         form = wrapper.find('form');
     });
@@ -35,5 +37,11 @@ describe('Question', () => {
         inputs = form.find('input')
         expect(inputs).toHaveLength(4)
     });
+
+    // test('it calls handleSubmit (and nextQuestion) on form submission', () => {
+    //     wrapper.setProps({ correct_answer: userAnswer})
+    //     form.simulate('submit', {preventDefault: jest.fn()})
+    //     expect(handleSubmitMock.mock.calls.toHaveLength).toBe(1)
+    // })
 
 })

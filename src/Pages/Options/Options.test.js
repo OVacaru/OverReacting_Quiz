@@ -1,10 +1,13 @@
 import Options from './index';
 import { shallow } from 'enzyme';
+import { setPlayers } from '../../Actions';
 
 describe('Options', () => {
-    let wrapper, form, inputs, selects, numInput, initProps, newProps;
+    let wrapper, form, inputs, selects, numInput, initProps, newProps, getQuestionMock, setPlayerMock;
 
     beforeEach(() => {
+        getQuestionMock = jest.fn();
+        setPlayerMock = jest.fn();
         const stub = {
             question: [],
             totalPlayers: 0,
@@ -13,7 +16,7 @@ describe('Options', () => {
             difficulty: ''
 
         }
-        wrapper = shallow(<Options.WrappedComponent {...stub} />)
+        wrapper = shallow(<Options.WrappedComponent {...stub} getQuestionMock={getQuestionMock} setPlayerMock={setPlayerMock} />)
         form = wrapper.find('form');
     });
 
@@ -34,7 +37,7 @@ describe('Options', () => {
         expect(form).toHaveLength(1);
         inputs = form.find('input')
         expect(inputs).toHaveLength(3);
-        expect(inputs.last().prop().type).toBe('submit')
+        // expect(inputs.last().prop().type).toBe('submit')
     });
 
     test('it updates player Prop on user input', () => {
@@ -45,13 +48,13 @@ describe('Options', () => {
         expect(newProps).not.toEqual(initProps)
     });
 
-    // test('it updates question Prop on user input', () => {
-    //     numInput = form.find('input').second();
-    //     initProps = wrapper.prop('noOfQuestions');
-    //     numInput.simulate('change', { target: { value: 5 } })
-    //     newProps = wrapper.prop('noOfQuestions');
-    //     expect(newProps).not.toEqual(initProps)
-    // });
+    test('it updates question Prop on user input', () => {
+        numInput = form.find('input').second();
+        initProps = wrapper.prop('noOfQuestions');
+        numInput.simulate('change', { target: { value: 5 } })
+        newProps = wrapper.prop('noOfQuestions');
+        expect(newProps).not.toEqual(initProps)
+    });
 
     test('it updates category Prop on user input', () => {
         numInput = form.find('select').first();
