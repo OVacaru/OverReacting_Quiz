@@ -80,4 +80,5 @@ describe('Options', () => {
         let links = wrapper.find('Link');
         expect(links).toHaveLength(1)
     })
+
 })

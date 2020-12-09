@@ -13,7 +13,7 @@ describe('Question', () => {
                 correct_answer: '',
                 incorrect_answers: []
             },
-            userAnswer: ""
+            userAnswer: null
             }
         wrapper = shallow(<Question.WrappedComponent 
             {...stub} 
@@ -38,9 +38,9 @@ describe('Question', () => {
         expect(inputs).toHaveLength(4)
     });
 
-    // test('it calls handleSubmit (and nextQuestion) on form submission', () => {
-    //     wrapper.setProps({ correct_answer: userAnswer})
-    //     form.simulate('submit', {preventDefault: jest.fn()})
-    //     expect(handleSubmitMock.mock.calls.toHaveLength).toBe(1)
-    // })
+    test('it calls handleSubmit (and nextQuestion) on form submission', (e) => {
+        wrapper.setProps({ userAnswer: "cheese", correct_answer: "cheese" })
+        form.simulate('submit', {preventDefault: jest.fn()})
+        expect(handleSubmitMock.mock.calls.toHaveLength).toBe(1)
+    })
 })

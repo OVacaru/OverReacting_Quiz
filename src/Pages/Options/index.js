@@ -24,7 +24,7 @@ class Options extends Component {
         return (
         <div id="optionPage">
             <p>This is the page: Options</p>
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} setPlayers={this.setPlayers} getQuestions={this.getQuestions}>
                 <label htmlFor="noOfPlayers"> How Many Players? </label>
                 <input type="number" name="noOfPlayers" min="1" max="4" />
                 <br/>
