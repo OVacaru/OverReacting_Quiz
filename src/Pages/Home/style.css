@@ -11,13 +11,14 @@
     background-repeat: no-repeat;
     background-size: cover;
     align-items: center;
-    padding-bottom: 70px;
+    padding-bottom: 150px;
 }
 
 h1 {
     font-family: 'Nerko One', Verdana, Arial;
     color: white;
     padding: 5px;
+    margin-left: 0
 }
 
 .startBtn {
@@ -28,9 +29,8 @@ h1 {
     font-size: 20px;
     border-radius: 20%;
     text-decoration: none;
-    margin: 70px;
-    margin-top: 170px;
-    /* background-color: rgba(124, 116, 116, 0.781); */
+    width: 300px;
+    margin-top: 250px;
     border-style: none;
     color: white;
 }
@@ -49,10 +49,12 @@ h1 {
     padding: 20px;
     background-color: rgba(113, 210, 235, 0.781);
     color: white;
-    margin: 80px;
+    margin-top: 90px;
     font-size: 20px;
-    border-radius: 40%;
+    border-radius: 30%;
     border-style: none;
+    width: 150px;
+    margin-left: 44%;
 }
 
 #rulesBtn:hover {

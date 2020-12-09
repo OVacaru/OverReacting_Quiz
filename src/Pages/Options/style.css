@@ -1,10 +1,10 @@
 * {
     box-sizing: border-box;
-    margin: 0;
+    margin: auto;
 }
 
 #optionPage {
-    display: grid;
+    /* display: grid; */
     background-image: url("background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -15,17 +15,12 @@
     margin-top: 140px;
 }
 
-/* .optionsDiv {
-    text-align: center;
-} */
-
 .optionsBtn {
     padding: 12px;
-    background-color: rgb(104, 201, 160);
+    background-color: rgba(113, 210, 235, 0.781);
     border-radius: 30px;
     border-style: none;
     color: white;
-    margin-bottom: 20px;
 }
 
 .optionsBtn:hover {
@@ -45,6 +40,7 @@
     text-decoration: none;
     text-align: center;
     font-size: 30px;
+    margin-left: 38%;
 }
 
 .startBtn:hover {
@@ -52,10 +48,10 @@
 }
 
 .formLine {
-    border: 1px solid black;
     padding: 20px;
     text-align: center;
     color: white;
     font-weight: bold;
     padding: 20px;
+    font-size: 20px;
 }

@@ -24,7 +24,7 @@ class Options extends Component {
     render() {
         return (
         <div id="optionPage">
-            <p>This is the page: Options</p>
+            <h1> The Over Reacting Quiz </h1>
             <div id="optionsForm">
             <form onSubmit={this.handleSubmit}>
                 <div className="formLine">

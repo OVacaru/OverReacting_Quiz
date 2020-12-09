@@ -23,7 +23,7 @@ class Home extends Component {
                 <h1> The Over Reacting Quiz </h1>
                 
                 {/* <button id="startBtn">  */}
-                <Link to='/options' className="startBtn"> Start </Link> 
+                <Link to='/options' className="startBtn"> START </Link> 
                 {/* </button> */}
                 <div className="rules">
                 <button id="rulesBtn" onClick={this.togglePopup.bind(this)}> Rules</button>  
