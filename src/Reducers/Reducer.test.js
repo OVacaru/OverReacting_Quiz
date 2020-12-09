@@ -37,7 +37,7 @@ describe('Reducer', () => {
             correct_answer: 'True',
             incorrect_answers: ['False']
         }]
-        returnState = Reducer(undefined, {tyoe: 'LOAD_QUIZ', payload: fakeQuestion})
+        returnState = Reducer(undefined, {type: 'LOAD_QUIZ', payload: fakeQuestion})
         expect(returnState.questions).toEqual(fakeQuestion)    
     });
 
