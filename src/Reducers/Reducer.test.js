@@ -32,7 +32,7 @@ describe('Reducer', () => {
     it('loads quiz', () => {
         let fakeQuestion = [{
             type: 'boolean',
-            category: 'geography',
+            category: 'maths',
             question: '2+2=4?',
             correct_answer: 'True',
             incorrect_answers: ['False']
