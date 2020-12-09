@@ -43,5 +43,4 @@ describe('Question', () => {
     //     form.simulate('submit', {preventDefault: jest.fn()})
     //     expect(handleSubmitMock.mock.calls.toHaveLength).toBe(1)
     // })
-
 })
