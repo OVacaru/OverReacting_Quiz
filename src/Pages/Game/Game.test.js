@@ -3,13 +3,16 @@ import { shallow } from 'enzyme';
 
 describe('Game', () => {
     let wrapper;
-
+    const stub = {
+        questions: 0,
+        questionID: 101
+    }
     beforeEach(() => {
-        wrapper = shallow(<Game />)
+        wrapper = shallow(<Game.WrappedComponent {...stub}/>)
     });
 
     test('it renders', () => {
-        let header = wrapper.find('h1');
+        let header = wrapper.find('#gamePage');
         expect(header).toHaveLength(1);
     });
 
