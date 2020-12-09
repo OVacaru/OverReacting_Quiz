@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+#optionPage {
+    display: grid;
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 170px;
+}
+
+#optionsForm {
+    margin-top: 140px;
+}
+
+/* .optionsDiv {
+    text-align: center;
+} */
+
+.optionsBtn {
+    padding: 12px;
+    background-color: rgb(104, 201, 160);
+    border-radius: 30px;
+    border-style: none;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.optionsBtn:hover {
+    font-weight: bold;
+}
+
+.numberInput {
+    width: 40px;
+    height: 20px;
+}
+
+.startBtn {
+    background-color: rgb(238, 111, 227);
+    padding: 20px;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 30px;
+}
+
+.startBtn:hover {
+    font-weight: bold;
+}
+
+.formLine {
+    border: 1px solid black;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+}
