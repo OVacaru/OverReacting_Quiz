@@ -5,16 +5,18 @@ import { Home, Options, Game, Results } from './Pages';
 class App extends Component {
   render() {
     return (
-      <Router>
-        <Switch>
-          <Route exact path ='/' component={Home} />
-          <Route path ='/options' component={Options} />
-          <Route path ='/game' component={Game} />
-          <Route path ='/results' component={Results} />
-        </Switch>
-      </Router>
-    )
-  }
-}
+      <div id="app">
+        <Router>
+          <Switch>
+            <Route exact path ='/' component={Home} />
+            <Route path ='/options' component={Options} />
+            <Route path ='/game' component={Game} />
+            <Route path ='/results' component={Results} />
+          </Switch>
+        </Router>
+      </div>
+    );
+  };
+};
 
 export default App;

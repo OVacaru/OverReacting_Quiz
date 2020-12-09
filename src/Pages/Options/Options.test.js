@@ -1,33 +1,80 @@
 import Options from './index';
 import { shallow } from 'enzyme';
+import { setPlayers } from '../../Actions';
 
 describe('Options', () => {
-    let wrapper;
+    let wrapper, form, inputs, selects, numInput, initProps, newProps, getQuestionMock, setPlayerMock;
 
     beforeEach(() => {
-        wrapper = shallow(<Options />)
-    });
+        getQuestionMock = jest.fn();
+        setPlayerMock = jest.fn();
+        const stub = {
+            question: [],
+            totalPlayers: 0,
+            noOfQuestions: 0,
+            category: '',
+            difficulty: ''
 
-    test('it renders a form with a number input and a submit', () => {
-        let form = wrapper.find('form');
-        expect(form).toHaveLength(1);
-        const inputs = form.find('input')
-        expect(inputs).toHaveLength(2);
-        expect(inputs.first().props().type).toBe('number')
-    });
-
-    test('it updates state on user input', () => {
+        }
+        wrapper = shallow(<Options.WrappedComponent {...stub} getQuestionMock={getQuestionMock} setPlayerMock={setPlayerMock} />)
         form = wrapper.find('form');
-        const numInput = form.find('input').first();
-        const initState = wrapper.state('noOfQuestions');
+    });
+
+    test('it renders a form with three inputs', () => {
+        expect(form).toHaveLength(1);
+        inputs = form.find('input')
+        expect(inputs).toHaveLength(3);
+        // expect(inputs.first().prop().type).toBe('number')
+    });
+
+    test('it renders a form with two select inputs', () => {
+        expect(form).toHaveLength(1);
+        selects = form.find('select')
+        expect(selects).toHaveLength(2);
+    });
+
+    test('it renders a form with a submit input', () => {
+        expect(form).toHaveLength(1);
+        inputs = form.find('input')
+        expect(inputs).toHaveLength(3);
+        // expect(inputs.last().prop().type).toBe('submit')
+    });
+
+    test('it updates player Prop on user input', () => {
+        numInput = form.find('input').first();
+        initProps = wrapper.prop('totalPlayers');
         numInput.simulate('change', { target: { value: 5 } })
-        const newState = wrapper.state('noOfQuestions');
-        expect(newState).not.toEqual(initState)
+        newProps = wrapper.prop('totalPlayers');
+        expect(newProps).not.toEqual(initProps)
+    });
+
+    test('it updates question Prop on user input', () => {
+        numInput = form.find('input').second();
+        initProps = wrapper.prop('noOfQuestions');
+        numInput.simulate('change', { target: { value: 5 } })
+        newProps = wrapper.prop('noOfQuestions');
+        expect(newProps).not.toEqual(initProps)
+    });
+
+    test('it updates category Prop on user input', () => {
+        numInput = form.find('select').first();
+        initProps = wrapper.prop('category');
+        numInput.simulate('change', { target: { value: "geography" } })
+        newProps = wrapper.prop('category');
+        expect(newProps).not.toEqual(initProps)
+    });
+
+    test('it updates difficulty Prop on user input', () => {
+        numInput = form.find('select').first();
+        initProps = wrapper.prop('difficulty');
+        numInput.simulate('change', { target: { value: "hard" } })
+        newProps = wrapper.prop('difficulty');
+        expect(newProps).not.toEqual(initProps)
     });
 
     // test('it calls on getQuestion prop on form submission', () => {
     //     form = wrapper.find('form');
-    //     wrapper.setState({ noOfQuestion: '5'})
+    //     wrapper.setProp({ noOfQuestion: '5'})
     // })
 
     test('it has 1 Link', () => {
