@@ -19,6 +19,8 @@ describe('Options', () => {
         form = wrapper.find('form');
     });
 
+
+
     test('it renders a form with three inputs', () => {
         expect(form).toHaveLength(1);
         inputs = form.find('input')
@@ -40,6 +42,7 @@ describe('Options', () => {
     });
 
     test('it updates player Prop on user input', () => {
+        form = wrapper.find('form');
         numInput = form.find('input').first();
         initProps = wrapper.prop('totalPlayers');
         numInput.simulate('change', { target: { value: 5 } })
@@ -71,13 +74,15 @@ describe('Options', () => {
         expect(newProps).not.toEqual(initProps)
     });
 
+
     // test('it calls on getQuestion prop on form submission', () => {
     //     form = wrapper.find('form');
     //     wrapper.setProp({ noOfQuestion: '5'})
     // })
-
+    
     test('it has 1 Link', () => {
         let links = wrapper.find('Link');
         expect(links).toHaveLength(1)
     })
 })
+
