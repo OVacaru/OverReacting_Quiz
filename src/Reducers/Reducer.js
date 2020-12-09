@@ -11,7 +11,8 @@ const initState = {
         question: "",
         correct_answer: "",
         incorrect_answers: [""]
-    } ]
+    } ],
+    error: null 
 };
 
 const Reducer = (state = initState, action) => {

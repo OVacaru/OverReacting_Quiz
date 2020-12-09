@@ -1,7 +1,6 @@
 import Options from './index';
 import { shallow } from 'enzyme';
 
-
 describe('Options', () => {
     let wrapper, form, inputs, selects, numInput, initProps, newProps, getQuestionMock, setPlayerMock;
 
