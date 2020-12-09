@@ -40,6 +40,7 @@ describe('Options', () => {
     });
 
     test('it updates player Prop on user input', () => {
+        form = wrapper.find('form');
         numInput = form.find('input').first();
         initProps = wrapper.prop('noOfPlayers');
         numInput.simulate('change', { target: { value: 5 } })
@@ -98,5 +99,5 @@ describe('Options', () => {
         let links = wrapper.find('Link');
         expect(links).toHaveLength(1)
     })
-
 })
+
