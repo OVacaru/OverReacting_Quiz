@@ -36,12 +36,32 @@ async function fetchQuestions (amount="10", category="9", difficulty="easy") {
 };
 
 export const loadQuiz = (questions) => ({ type: 'LOAD_QUIZ', payload: questions });
+
 export const setPlayers = (noOfPlayers) => ({ type: 'SET_PLAYERS', payload: noOfPlayers});
+
 export const nextQuestion = () => ({type: 'LOAD_NEXT_QUESTION'});
+
 export const handleError = err => {
     console.warn(err);
     return {type: 'SET_ERROR', payload: err.message}
 }
+
+let nextPlayerId = 0;
+
+export const addPlayer = name => {
+    return {
+        type: actionTypes.ADD_PLAYER,
+        id: nextPlayerId++,
+        name
+    }
+}
+
+// export default updatePlayersName = e => ({
+//     type: 'UPDATE_PLAYERS_NAMES',
+//     payload: { name: e.target.name }
+// });
+
+
 
 // export const loadPlayer = (players) => ({ type: 'LOAD_PLAYER', payload: {players} })
 // export const addScoretoPlayer1 = () => ({type: 'ADD_SCORE_TO_PLAYER1' })

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom' ;
 import { getQuestions } from "../../Actions";
 import { setPlayers } from "../../Actions";
 import { connect } from 'react-redux';
+import PlayerName from '../../Components/PlayerName';
 
 class Options extends Component {
 
@@ -52,6 +53,9 @@ class Options extends Component {
                 <br/>
                 <input type="submit" value="Confirm Options" onClick= {this.handleChange}/>
             </form>
+            <div>
+                <PlayerName />
+            </div>
             <br/>
             <Link to='/game'>START PLAYING</Link>
         </div>

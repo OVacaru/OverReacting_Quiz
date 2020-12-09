@@ -18,6 +18,8 @@ const Reducer = (state = initState, action) => {
     switch(action.type){
         case 'SET_PLAYERS':
             return { ...state, totalPlayers: action.payload };
+        // case 'UPDATE_PLAYERS_NAMES':
+        //     return { ...state, players, name: action.payload };
         case 'LOAD_QUIZ':
             return { ...state, questions: action.payload };
         // case 'LOAD_PLAYER':
