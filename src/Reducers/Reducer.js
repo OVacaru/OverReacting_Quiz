@@ -1,9 +1,10 @@
 const initState = {
+
     totalPlayers: 0,
     currentPlayer: 0,
     players: [],
     questionID: 0,
-    questions: []
+    questions: [],
 };
 
 const Reducer = (state = initState, action) => {
@@ -25,7 +26,7 @@ const Reducer = (state = initState, action) => {
         case 'NEXT_QUESTION':
             return { ...state, questionID: state.questionID += 1 };
         case 'RESET_GAME':
-            return initState;
+            return {... state};
         case 'SET_ERROR':
             return { ...state, error: action.payload };
         default:
