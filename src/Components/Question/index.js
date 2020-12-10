@@ -79,7 +79,7 @@ class Question extends Component {
                 </div>  
                 </div>}
                 <div> 
-
+<h3 id="correctanswer"> {`The correct answer was "${this.props.currentQuestion.correct_answer}"`}</h3>
                 </div>
             </div>
             
