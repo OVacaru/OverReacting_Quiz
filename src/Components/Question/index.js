@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { nextQuestion, nextPlayer, increasePlayerScore} from "../../Actions";
 import { connect } from 'react-redux';
 import { mSTP } from '../../Pages/Game';
+import './style.css';
 
 class Question extends Component {
 
@@ -42,19 +43,46 @@ class Question extends Component {
             <div id="questionComponent">
                 <p> it is {playerData.stats.name} turn!</p>
                 <h1>{ questionData.question } </h1> <br/>
+
                 {questionData.type === "boolean" ? 
-                    <form>
-                        <input type="submit" value="True" onClick={this.handleSubmit}/> <br/>
-                        <input type="submit" value="False" onClick={this.handleSubmit}/> <br/>
-                    </form> :
-                    <form>
-                        <input type="submit" value={ randomAnswer[0] } onClick={this.handleSubmit} /> <br/>
-                        <input type="submit" value={ randomAnswer[1] } onClick={this.handleSubmit} /> <br/>
-                        <input type="submit" value={ randomAnswer[2] } onClick={this.handleSubmit} /> <br/>
-                        <input type="submit" value={ randomAnswer[3] } onClick={this.handleSubmit} /> <br/>
-                    </form>
-                }
+                    <div>
+                <div class="choice-container">
+                    <p class="choice-prefix">A</p>
+                    <p class="choice-text"><input type="submit" value="True" onClick={this.handleSubmit}/> <br/></p>
+                </div>
+                <div class="choice-container">
+                    <p class="choice-prefix">B</p>
+                    <p class="choice-text"><input type="submit" value="False" onClick={this.handleSubmit}/> <br/></p>
+                </div>
+                </div> :
+                // {questionData.type === "boolean" ? 
+                //     <form>
+                //         <input type="submit" value="True" onClick={this.handleSubmit}/> <br/>
+                //         <input type="submit" value="False" onClick={this.handleSubmit}/> <br/>
+                //     </form> :
+                <div>
+                <div class="choice-container">
+                    <p class="choice-prefix">A</p>
+                    <p class="choice-text">< input type="submit" value={ randomAnswer[0] } onClick={this.handleSubmit} /> <br/></p>
             </div>
+                <div class="choice-container">
+                    <p class="choice-prefix">B</p>
+                    <p class="choice-text"><input type="submit" value={ randomAnswer[1] } onClick={this.handleSubmit} /> <br/></p>
+            </div>
+                <div class="choice-container">
+                    <p class="choice-prefix">C</p>
+                    <p class="choice-text"><input type="submit" value={ randomAnswer[2] } onClick={this.handleSubmit} /> <br/></p>
+            </div>
+                <div class="choice-container">
+                    <p class="choice-prefix">D</p>
+                    <p class="choice-text"><input type="submit" value={ randomAnswer[3] } onClick={this.handleSubmit} /> <br/></p>
+                </div>  
+                </div>}
+                <div> 
+
+                </div>
+            </div>
+            
         );
     };
 };
