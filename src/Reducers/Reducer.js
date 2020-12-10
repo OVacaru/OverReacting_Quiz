@@ -15,8 +15,8 @@ const Reducer = (state = initState, action) => {
             return { ...state, questions: action.payload };
         case 'INCREASE_PLAYER_SCORE':
             let newState = {...state};
-            console.log(typeof(action.payload), " : ", action.payload)
-            return(newState.players[action.payload].score +=1);
+            newState.players[action.payload].score +=1;
+            return newState;
         case 'NEXT_PLAYER':
             if (state.currentPlayer === (state.totalPlayers-1) ) {
                 return { ...state, currentPlayer: 0 }; 
