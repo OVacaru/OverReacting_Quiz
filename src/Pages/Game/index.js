@@ -5,6 +5,9 @@ import Results from '../Results';
 import { connect } from 'react-redux';
 
 class Game extends Component {
+    state={
+        currentPlayer: 0,
+    }
 
     render() {
         return (
@@ -13,9 +16,7 @@ class Game extends Component {
                 {this.props.questions.length > 0 && this.props.questionID === this.props.questions.length ? 
                     <Results winner={this.props.players}/> :
                     <div id="gameArea">
-                        <Player player={{
-                            totalPlayers:this.props.totalPlayers,
-                            players: this.props.players}}/>
+                        <Player player={{ totalPlayers:this.props.totalPlayers, players: this.props.players }}/>
                         <Question question={this.props.questions[this.props.questionID]}/>
                     </div>
                 }
