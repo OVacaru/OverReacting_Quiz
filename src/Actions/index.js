@@ -35,15 +35,34 @@ async function fetchQuestions (amount, category, difficulty) {
     };
 };
 
+
 export const setPlayers = (playerNumber, playerStats) => ({ type: 'LOAD_PLAYERS', totalPlayers: playerNumber, players: playerStats});
 export const loadQuestions = (questions) => ({ type: 'LOAD_QUESTIONS', payload: questions });
 export const nextQuestion = () => ({type: 'NEXT_QUESTION'});
 export const increasePlayerScore = (player) => ({type: 'INCREASE_PLAYER_SCORE', payload: player })
 
+
 export const handleError = err => {
     console.warn(err);
     return {type: 'SET_ERROR', payload: err.message}
 }
+
+let nextPlayerId = 0;
+
+export const addPlayer = name => {
+    return {
+        type: actionTypes.ADD_PLAYER,
+        id: nextPlayerId++,
+        name
+    }
+}
+
+// export default updatePlayersName = e => ({
+//     type: 'UPDATE_PLAYERS_NAMES',
+//     payload: { name: e.target.name }
+// });
+
+
 
 // export const loadPlayer = (players) => ({ type: 'LOAD_PLAYER', payload: {players} })
 // export const reload = () => ({type: 'RESET_GAME'})
