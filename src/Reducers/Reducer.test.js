@@ -2,37 +2,48 @@ import Reducer from './Reducer';
 
 describe('Reducer', () => {
     let returnState;
+
     it('initializes with a default state', () => {
         returnState = Reducer(undefined, {})
         expect(returnState).toEqual({ 
             totalPlayers: 0,
-            players: [ {
-                name: "",
-                score: 0
-            } ],
+            players: [],
             questionID: 0,
-            questions: [ { 
-                type: "",
-                category: "",
-                question: "",
-                correct_answer: "",
-                incorrect_answers: [""]
-            } ] })
+            questions: [],
+         });
+    });
+
+    it('sets players', () => {
+        let fakePlayers = 2 
+        let fakePlayerDetails = [{ name: "Steve", score: 0 }, { name: "Eve", score: 0}]
+        returnState = Reducer(undefined, { type: 'LOAD_PLAYERS', payload: (fakePlayers, fakePlayerDetails) })
+        expect(returnState.totalPlayers).toEqual(fakePlayers)
+    });
+
+    it('loads questions', () => {
+        let fakeQuestion = [{
+            type: 'boolean',
+            category: 'maths',
+            question: '2+2=4?',
+            correct_answer: 'True',
+            incorrect_answers: ['False']
+        }]
+        returnState = Reducer(undefined, {type: 'LOAD_QUESTIONS', payload: fakeQuestion})
+        expect(returnState.questions).toEqual(fakeQuestion)    
+    });
+
+    it('increases player score', () => {
+
     })
 
-    // it('loads data', () => {
-    //     let fakeDoggos = [{id: 1, img: 'test.jpg', liked: false}, {id: 2, img: 'test2.jpg', liked: false}] 
-    //     returnState = Reducer(undefined, { type: 'LOAD_DOGGOS', payload: fakeDoggos})
-    //     expect(returnState.allDoggos).toEqual(fakeDoggos)
-    // })
+    it('loads next question', () => {
+        returnState = Reducer(undefined, { type: 'NEXT_QUESTION' })
+        expect(returnState.questionID).not.toEqual(0)
+    });
 
-    // it('toggles like status of dog of given id', () => {
-    //     let fakeState = {
-    //         allDoggos: [{id: 1, img: 'test.jpg', liked: false}, {id: 2, img: 'test2.jpg', liked: false}],
-    //         loading: false
-    //     }
-    //     returnState = Reducer(fakeState, { type: 'LIKE_DOGGO', payload: 1})
-    //     expect(returnState.allDoggos[0].liked).toBe(true)
-    //     expect(returnState.allDoggos[1].liked).toBe(false)
-    // })
+    it('sets error', () => {
+        let fakeError = 'Oh no!'
+        returnState = Reducer(undefined, { type: 'SET_ERROR', payload: fakeError })
+        expect(returnState.error).toEqual(fakeError)
+    });
 })

@@ -9,12 +9,16 @@ class Game extends Component {
     render() {
         return (
             <div id="gamePage">
-                <p>This is the page: Game</p>
                 {this.props.questions.length > 0 && this.props.questionID === this.props.questions.length ? 
                     <Results winner={this.props.players}/> :
                     <div id="gameArea">
-                        <Player player={this.props.players}/>
-                        <Question question={this.props.questions[this.props.questionID]}/>
+                        <Player player={ { 
+                            totalPlayers:this.props.totalPlayers,
+                            players: this.props.players,
+                            currentPlayer: this.props.currentPlayer } }/>
+                        <Question
+                            currentQuestion={this.props.questions[this.props.questionID]}
+                            currentPlayer={{ id: this.props.currentPlayer, stats: this.props.players[this.props.currentPlayer] }}/>
                     </div>
                 }
             </div>
@@ -24,9 +28,10 @@ class Game extends Component {
 
 export const mSTP = state => ({
     totalPlayers: state.totalPlayers,
+    currentPlayer: state.currentPlayer,
     players: state.players,
     questionID: state.questionID,
     questions: state.questions
 });
 
-export default connect(mSTP, { Question , Results } )(Game);
+export default connect(mSTP, { Question, Results, Player } )(Game);
