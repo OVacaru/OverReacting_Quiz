@@ -57,17 +57,25 @@ class Options extends Component {
         };
         return (
             <>
-            { this.props.questions.length > 1 ? <Link to='/game'>Your game is ready, click here to start!</Link> :
+            { this.props.questions.length > 1 ? <div className="ready"><Link to='/game'>Your game is ready, click here to start!</Link></div> :
                 <div id="optionPage">
+                    <h1> The Over Reacting Quiz </h1>
                     <form onSubmit={this.handleSubmit}>
-                        <label htmlFor="playerName"> Who is playing? </label><br/>
+                    <div>
+                        <div id="optionsForm">
+                        <div className="formLine">
+                            <label htmlFor="playerName"> Who is playing? </label><br/>
                         {addMorePlayers} <br/>
-                        <button onClick={this.addPlayer}> {this.state.totalPlayers >= 4 ? "Player Limit Reached!": "Add New Player"}</button> <br/>
-
-                        <label htmlFor="questions"> How many questions? </label>
-                        <input type="number" name="questions" min="1" max="24" defaultValue="8"/> <br/>
-
-                        <label htmlFor="category"> Choose category: </label>
+                            <button onClick={this.addPlayer}> {this.state.totalPlayers >= 4 ? "Player Limit Reached!": "Add New Player"}</button>
+                        </div>
+                        <br/>
+                        <div className="formLine">
+                            <label htmlFor="questions"> How many questions? </label>
+                            <input type="number" name="questions" min="1" max="24" defaultValue="8"/>
+                        </div>
+                        <br/>
+                        <div className="formLine">
+                            <label htmlFor="category"> Choose category: </label>
                         <select name="category" >
                             <option value="9" > General Knowledge </option>
                             <option value="10" > Books </option>
@@ -77,17 +85,25 @@ class Options extends Component {
                             <option value="17" > Science and Nature </option>
                             <option value="22" > Geography </option>
                             <option value="23" > History </option>
-                        </select> <br/>
-
-                        <label htmlFor="difficulty"> Choose difficulty: </label>
+                        </select>
+                        </div>
+                        <br/>
+                        <div className="formLine">
+                           <label htmlFor="difficulty"> Choose difficulty: </label>
                         <select name="difficulty">
                             <option value="easy"> Easy </option>
                             <option value="medium"> Medium </option>
                             <option value="hard"> Hard </option>
-                        </select> <br/>
-
-                        <input type="submit" value="Confirm Options" onClick= {this.handleInput}/>
+                        </select> 
+                        </div>
+                        <br/>
+                        <div className="formLine">
+                           <input type="submit" className="optionsBtn" value="Confirm Options" onClick= {this.handleInput}/> 
+                        </div>
+                        </div>
+                        </div>
                     </form> <br/>
+                    
                 </div>
             }
             </>

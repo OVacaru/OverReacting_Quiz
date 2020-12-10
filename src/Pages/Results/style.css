@@ -1,0 +1,12 @@
+#resultsPage {
+    display: grid;
+    grid-template-columns: auto auto;
+
+    align-items: center;
+    margin-right: 50px;
+}
+
+#playAgain {
+    color: white;
+    font-size: 40px;
+}
