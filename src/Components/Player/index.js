@@ -24,15 +24,16 @@ class Player extends Component {
     };
 
     render() {
+        
+        console.log(this.props.player.currentPlayer)
+
         // console.log(this.props.player.totalPlayers)
         // console.log(this.props.player.players)
-        // console.log(this.props.player.players[0].name)
-        // console.log(this.props.player.players[0].score)
+
 
         return (
             <div id="playerComponent">
                 <p>This is the component: Player</p>        
-
                 <table id="playerTable">
                     <tbody>
                         <tr>{this.renderTableHeader()}</tr>
@@ -44,4 +45,4 @@ class Player extends Component {
     }   
 };
 
-export default connect(mSTP, { Player }) (Player);
+export default connect(mSTP) (Player);
