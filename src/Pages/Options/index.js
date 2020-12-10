@@ -7,6 +7,9 @@ import { setPlayers } from "../../Actions";
 import AddPlayer from '../../Components/AddPlayer';
 import { Link } from 'react-router-dom';
 
+import './style.css';
+
+
 class Options extends Component {
     state = {
         totalPlayers: 1,
