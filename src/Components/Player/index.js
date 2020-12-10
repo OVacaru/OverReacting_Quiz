@@ -23,17 +23,9 @@ class Player extends Component {
         });
     };
 
-    render() {
-        
-        console.log(this.props.player.currentPlayer)
-
-        // console.log(this.props.player.totalPlayers)
-        // console.log(this.props.player.players)
-
-
+    render() {      
         return (
             <div id="playerComponent">
-                <p>This is the component: Player</p>        
                 <table id="playerTable">
                     <tbody>
                         <tr>{this.renderTableHeader()}</tr>

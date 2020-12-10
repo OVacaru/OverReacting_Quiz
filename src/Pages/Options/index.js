@@ -51,8 +51,6 @@ class Options extends Component {
         for (let i = 0; i < this.state.totalPlayers; i++) {
             addMorePlayers.push(<AddPlayer key={i} counter={i}/>)
         };
-        // this.props.history.push("/game")
-        // <Link to='/game'>Your game is ready, click here to start!</Link>
         return (
             <>
             { this.props.questions.length > 1 ? <Link to='/game'>Your game is ready, click here to start!</Link> :
