@@ -16,8 +16,7 @@
     },
     "coveragePathIgnorePatterns": [
       "/node_modules/",
-      "/Actions/",
-      "/Player/"
+      "/Actions/"
     ]
   },
   "repository": {
