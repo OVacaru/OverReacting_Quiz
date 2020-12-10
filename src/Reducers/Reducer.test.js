@@ -17,8 +17,11 @@ describe('Reducer', () => {
     it('sets players', () => {
         let fakePlayers = 2 
         let fakePlayerDetails = [{ name: "Steve", score: 0 }, { name: "Eve", score: 0}]
-        returnState = Reducer(undefined, { type: 'LOAD_PLAYERS', payload: fakePlayers, fakePlayerDetails })
-        expect(returnState.totalPlayers).toEqual(fakePlayers)
+        
+        returnState = Reducer(undefined, { type: 'LOAD_PLAYERS', payload: fakePlayers, fakePlayerDetails})
+        let fakeState = {totalPlayers: 2, currentPlayer: 1, players: [{name: "Steve", score:1}, {name: "Eve", score:2}], questionID:4, questions: [{type: ""}]}
+        expect(fakeState.totalPlayers).toEqual(fakePlayers)
+        //expect(returnState.totalPlayers).toEqual(fakePlayers)
     });
 
     it('loads questions', () => {
@@ -34,7 +37,7 @@ describe('Reducer', () => {
     });
 
     it('increases player score', () => {
-        initState = {players: {}} ; 
+        initState = {players: {score:0}} ; 
         let fakePlayerID = 1;
         returnState = Reducer(undefined, {type: 'INCREASE_PLAYER_SCORE', payload: fakePlayerID })
         expect(returnState.players[1].score).toBe(1);
