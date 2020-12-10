@@ -3,10 +3,9 @@ import { connect } from 'react-redux';
 import { mSTP } from '../Game';
 import { getQuestions } from "../../Actions";
 import { setPlayers } from "../../Actions";
+
 import AddPlayer from '../../Components/AddPlayer';
 import { Link } from 'react-router-dom';
-
-
 
 class Options extends Component {
     state = {
@@ -53,10 +52,10 @@ class Options extends Component {
         for (let i = 0; i < this.state.totalPlayers; i++) {
             addMorePlayers.push(<AddPlayer key={i} counter={i}/>)
         };
-// this.props.history.push("/game")
-// <Link to='/game'>Your game is ready, click here to start!</Link>
+        // this.props.history.push("/game")
+        // <Link to='/game'>Your game is ready, click here to start!</Link>
         return (
-            <>             
+            <>
             { this.props.questions.length > 1 ? <Link to='/game'>Your game is ready, click here to start!</Link> :
                 <div id="optionPage">
                     <form onSubmit={this.handleSubmit}>

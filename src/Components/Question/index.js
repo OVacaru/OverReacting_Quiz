@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { nextQuestion } from "../../Actions";
+import { nextQuestion, nextPlayer, increasePlayerScore} from "../../Actions";
 import { connect } from 'react-redux';
 import { mSTP } from '../../Pages/Game';
 
@@ -8,14 +8,15 @@ class Question extends Component {
     handleSubmit = e => {
         e.preventDefault();
         const userAnswer = e.target.value;
-        const correctAnswer = this.props.question.correct_answer;
-        
+        const correctAnswer = this.props.currentQuestion.correct_answer;
         if (userAnswer === correctAnswer) {
             console.log( "You got it right!");
+            this.props.increasePlayerScore(this.props.currentPlayer.id);
+            this.props.nextPlayer();
             this.props.nextQuestion();
-            
         } else {
             console.log( "You got it wrong!");
+            this.props.nextPlayer();
             this.props.nextQuestion();
         };
     };
@@ -33,24 +34,24 @@ class Question extends Component {
     };
     
     render() {
-        const showQuestion = this.props.question.question;
-        const data = this.props.question;
-        const allAnswers = [data.correct_answer, data.incorrect_answers[0], data.incorrect_answers[1], data.incorrect_answers[2]];
+        const playerData = this.props.currentPlayer;
+        const questionData = this.props.currentQuestion;
+        const allAnswers = [questionData.correct_answer, questionData.incorrect_answers[0], questionData.incorrect_answers[1], questionData.incorrect_answers[2]];
         const randomAnswer = this.shuffleArray(allAnswers);
         return (
             <div id="questionComponent">
-                <p>This is the component: Question</p>
-                <h1>{ showQuestion }</h1> <br/>
-                {this.props.question.type === "boolean" ? 
+                <p> it is {playerData.stats.name} turn!</p>
+                <h1>{ questionData.question } </h1> <br/>
+                {questionData.type === "boolean" ? 
                     <form>
                         <input type="submit" value="True" onClick={this.handleSubmit}/> <br/>
                         <input type="submit" value="False" onClick={this.handleSubmit}/> <br/>
                     </form> :
                     <form>
-                        <input type="submit" value={ randomAnswer[0] } onClick={this.handleSubmit}/> <br/>
-                        <input type="submit" value={ randomAnswer[1] } onClick={this.handleSubmit}/> <br/>
-                        <input type="submit" value={ randomAnswer[2] } onClick={this.handleSubmit}/> <br/>
-                        <input type="submit" value={ randomAnswer[3] } onClick={this.handleSubmit}/> <br/>
+                        <input type="submit" value={ randomAnswer[0] } onClick={this.handleSubmit} /> <br/>
+                        <input type="submit" value={ randomAnswer[1] } onClick={this.handleSubmit} /> <br/>
+                        <input type="submit" value={ randomAnswer[2] } onClick={this.handleSubmit} /> <br/>
+                        <input type="submit" value={ randomAnswer[3] } onClick={this.handleSubmit} /> <br/>
                     </form>
                 }
             </div>
@@ -58,4 +59,4 @@ class Question extends Component {
     };
 };
 
-export default connect(mSTP, { nextQuestion }) (Question);
+export default connect(mSTP, { nextQuestion, nextPlayer, increasePlayerScore }) (Question);

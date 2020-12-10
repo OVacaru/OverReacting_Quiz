@@ -35,15 +35,14 @@ async function fetchQuestions (amount, category, difficulty) {
     };
 };
 
+
 export const setPlayers = (playerNumber, playerStats) => ({ type: 'LOAD_PLAYERS', totalPlayers: playerNumber, players: playerStats});
 export const loadQuestions = (questions) => ({ type: 'LOAD_QUESTIONS', payload: questions });
 export const nextQuestion = () => ({type: 'NEXT_QUESTION'});
-export const increasePlayerScore = (player) => ({type: 'INCREASE_PLAYER_SCORE', payload: player })
-
+export const nextPlayer = () => ({type: 'NEXT_PLAYER'});
+export const increasePlayerScore = (playerID) => ({type: 'INCREASE_PLAYER_SCORE', payload: playerID })
+export const resetGame = () => ({type: 'RESET_GAME'})
 export const handleError = err => {
     console.warn(err);
     return {type: 'SET_ERROR', payload: err.message}
 }
-
-// export const loadPlayer = (players) => ({ type: 'LOAD_PLAYER', payload: {players} })
-// export const reload = () => ({type: 'RESET_GAME'})

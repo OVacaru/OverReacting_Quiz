@@ -1,6 +1,8 @@
 const initState = {
-    players: [],
+
     totalPlayers: 0,
+    currentPlayer: 0,
+    players: [],
     questionID: 0,
     questions: [],
 };
@@ -11,14 +13,21 @@ const Reducer = (state = initState, action) => {
             return { ...state, totalPlayers: action.totalPlayers, players: action.players };
         case 'LOAD_QUESTIONS':
             return { ...state, questions: action.payload };
-        // case 'LOAD_PLAYER':
-        //     return {...state, noOfPlayers: action.payload}
         case 'INCREASE_PLAYER_SCORE':
-            return {...state, name:action.payload, score: score +1  }; //this is wrong 
+            let newState = {...state};
+            console.log(typeof(action.payload), " : ", action.payload)
+            newState.players[action.payload].score +=1;
+            return newState;
+        case 'NEXT_PLAYER':
+            if (state.currentPlayer === (state.totalPlayers-1) ) {
+                return { ...state, currentPlayer: 0 }; 
+            } else {
+                return { ...state, currentPlayer: state.currentPlayer += 1 };
+            }
         case 'NEXT_QUESTION':
             return { ...state, questionID: state.questionID += 1 };
-        // case 'RELOAD':
-        //     return {data: [], noOfPlayers: 0, players: [{name: "Player 1", score:0},{name: "Player 2", score:0}, {name: "Player 3", score:0}]}
+        case 'RESET_GAME':
+            return initState;
         case 'SET_ERROR':
             return { ...state, error: action.payload };
         default:
