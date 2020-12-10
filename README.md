@@ -56,8 +56,8 @@ HTML, CSS, JavaScript, React, Redux, Jest, Enjyme, Netlify
 
 In no specific order:
 
-[StylianosThomas](https://github.com/StylianosThomas),  
-[kail0n](https://github.com/kail0n),    
-[FopeA6](https://github.com/FopeA6),    
-[stephanie-ai](https://github.com/stephanie-ai),    
-[OVacaru](https://github.com/OVacaru)   
+[StylianosThomas](https://github.com/StylianosThomas),
+[kail0n](https://github.com/kail0n),
+[FopeA6](https://github.com/FopeA6),
+[stephanie-ai](https://github.com/stephanie-ai),
+[OVacaru](https://github.com/OVacaru)
