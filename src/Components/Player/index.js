@@ -5,15 +5,15 @@ import { mSTP } from '../../Pages/Game';
 class Player extends Component {
 
     renderTableHeader () {
-        let header = Object.keys(this.props.player.players[0])
+        let header = Object.keys(this.props.playerStats[0]);
         return header.map ((key, index) => {
-        return <th key={index}>{key.toUpperCase()}</th>
+        return <th key={index}>{key.toUpperCase()}</th>;
         });
     };
 
     renderTableData () {
-        return this.props.player.players.map ((player, index) => {
-            const { name, score } = player
+        return this.props.playerStats.map ((player, index) => {
+            const { name, score } = player;
             return (
                 <tr key={index}>
                     <td>{name}</td>
@@ -23,7 +23,7 @@ class Player extends Component {
         });
     };
 
-    render() {      
+    render() {
         return (
             <div id="playerComponent">
                 <table id="playerTable">
@@ -34,7 +34,7 @@ class Player extends Component {
                 </table>
             </div>
         );
-    }   
+    };
 };
 
 export default connect(mSTP) (Player);
