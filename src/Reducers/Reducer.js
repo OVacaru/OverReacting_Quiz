@@ -15,7 +15,6 @@ const Reducer = (state = initState, action) => {
             return { ...state, questions: action.payload };
         case 'INCREASE_PLAYER_SCORE':
             let newState = {...state};
-            console.log(typeof(action.payload), " : ", action.payload)
             newState.players[action.payload].score +=1;
             return newState;
         case 'NEXT_PLAYER':
@@ -27,7 +26,7 @@ const Reducer = (state = initState, action) => {
         case 'NEXT_QUESTION':
             return { ...state, questionID: state.questionID += 1 };
         case 'RESET_GAME':
-            return initState;
+            return {... state};
         case 'SET_ERROR':
             return { ...state, error: action.payload };
         default:
