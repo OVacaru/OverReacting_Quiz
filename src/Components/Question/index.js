@@ -9,6 +9,7 @@ class Question extends Component {
         e.preventDefault();
         const userAnswer = e.target.value;
         const correctAnswer = this.props.question.correct_answer;
+        
         if (userAnswer === correctAnswer) {
             console.log( "You got it right!");
             this.props.nextQuestion();
@@ -41,15 +42,15 @@ class Question extends Component {
                 <p>This is the component: Question</p>
                 <h1>{ showQuestion }</h1> <br/>
                 {this.props.question.type === "boolean" ? 
-                    <form onSubmit={ this.handleSubmit }>
-                        <input type="submit" value="True" /> <br/>
-                        <input type="submit" value="False"/> <br/>
+                    <form>
+                        <input type="submit" value="True" onClick={this.handleSubmit}/> <br/>
+                        <input type="submit" value="False" onClick={this.handleSubmit}/> <br/>
                     </form> :
-                    <form onSubmit={ this.handleSubmit }>
-                        <input type="submit" value={ randomAnswer[0] } /> <br/>
-                        <input type="submit" value={ randomAnswer[1] } /> <br/>
-                        <input type="submit" value={ randomAnswer[2] } /> <br/>
-                        <input type="submit" value={ randomAnswer[3] } /> <br/>
+                    <form>
+                        <input type="submit" value={ randomAnswer[0] } onClick={this.handleSubmit}/> <br/>
+                        <input type="submit" value={ randomAnswer[1] } onClick={this.handleSubmit}/> <br/>
+                        <input type="submit" value={ randomAnswer[2] } onClick={this.handleSubmit}/> <br/>
+                        <input type="submit" value={ randomAnswer[3] } onClick={this.handleSubmit}/> <br/>
                     </form>
                 }
             </div>
@@ -57,4 +58,4 @@ class Question extends Component {
     };
 };
 
-export default connect(null, { nextQuestion }) (Question);
+export default connect(mSTP, { nextQuestion }) (Question);
