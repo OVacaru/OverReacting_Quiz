@@ -39,4 +39,3 @@ class Player extends Component {
 };
 
 export default connect(mSTP) (Player);
-// export default connect(mSTP, { Player }) (Player);
