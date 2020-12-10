@@ -1,8 +1,8 @@
 const initState = {
-    totalPlayers: 0,
     players: [],
+    totalPlayers: 0,
     questionID: 0,
-    questions: []
+    questions: [],
 };
 
 const Reducer = (state = initState, action) => {
