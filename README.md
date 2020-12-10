@@ -3,7 +3,6 @@
 *We are proud to present you our version of the popular trivia question game*
 *Whether by yourself or with a couple of friends, pick a category and start playing!*
 
-___
 
 ## Installation
 
@@ -13,13 +12,11 @@ In order to run our project you need first to install all the necessary dependen
 - Then `npm install` to get the required dependencies
 - Finally `npm start` will get the app to run on your browser
 
-___
 
 ## Technologies
 
 HTML, CSS, JavaScript, React, Redux, Jest, Enjyme, Netlify
 
-___
 
 ## Development Goals
 
@@ -34,7 +31,6 @@ ___
     - Added the option for 3 difficulty levels
     - Increased the number of categories available to choose from
 
-___
 
 ## Future Features
 
@@ -42,9 +38,8 @@ ___
 
 - More visually pleasing interface has been statistically proven to provide an increased entertainment value, so who are we to disagree? 
 - Add the ability to mix categories to get a more diverse and unique gameplay experience!
-- Reconfigure the application so that it can actually give winner a cookie!
+- Reconfigure the application so that it can actually give the winner a cookie!
 
-___
 
 ## Wins & Challenges
 
@@ -57,14 +52,12 @@ ___
     - Increase test coverage above 60%
 
 
-___
-
 ## Contributors
 
 In no specific order:
 
-[StylianosThomas](https://github.com/StylianosThomas)
-[kail0n](https://github.com/kail0n)
-[FopeA6](https://github.com/FopeA6)
-[stephanie-ai](https://github.com/stephanie-ai)
-[OVacaru](https://github.com/OVacaru)
+[StylianosThomas](https://github.com/StylianosThomas),  
+[kail0n](https://github.com/kail0n),    
+[FopeA6](https://github.com/FopeA6),    
+[stephanie-ai](https://github.com/stephanie-ai),    
+[OVacaru](https://github.com/OVacaru)   
