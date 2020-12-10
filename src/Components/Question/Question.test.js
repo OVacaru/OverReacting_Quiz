@@ -41,6 +41,6 @@ describe('Question', () => {
     test('it calls handleSubmit (and nextQuestion) on form submission', (e) => {
         wrapper.setProps({ userAnswer: "cheese", correct_answer: "cheese" })
         form.simulate('submit', {preventDefault: jest.fn()})
-        expect(handleSubmitMock.mock.calls.toHaveLength).toBe(1)
+        expect(handleSubmitMock.mock.calls.length).toBe(1)
     })
 })
