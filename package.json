@@ -17,8 +17,8 @@
     "coveragePathIgnorePatterns": [
       "/node_modules/",
       "/Actions/",
-      "/Options",
-      "/Question"
+      "/Optins",
+      "/Questin"
     ]
   },
   "repository": {
