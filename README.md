@@ -3,6 +3,7 @@
 *We are proud to present you our version of the popular trivia question game.*
 *Whether by yourself or with a couple of friends, pick a category and start playing!*
 
+![](public/over.gif)
 
 ## Installation
 
