@@ -5,6 +5,9 @@ import { getQuestions } from "../../Actions";
 import { setPlayers } from "../../Actions";
 import AddPlayer from '../../Components/AddPlayer';
 
+import './style.css';
+
+
 class Options extends Component {
     state = {
         totalPlayers: 1,
