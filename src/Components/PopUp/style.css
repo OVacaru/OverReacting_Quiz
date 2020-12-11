@@ -1,3 +1,10 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    text-align: center;
+    align-items: center;
+}
+
 .popup {  
     position: fixed;  
     width: 100%;  
@@ -6,7 +13,6 @@
     left: 0;  
     right: 0;  
     bottom: 0;  
-    margin: auto;  
     background-color: rgba(0,0,0, 0.5);  
     color: black;
 }  
@@ -17,10 +23,8 @@
     right: 25%;  
     top: 25%;  
     bottom: 25%;  
-    margin: auto;  
     border-radius: 20px;  
     color: black;
-    /* background: white;   */
     border: 1px white solid;
     padding: 10px;
 }

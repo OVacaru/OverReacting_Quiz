@@ -1,29 +1,32 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    text-align: center;
+    align-items: center;
+}
+
 #gamePage {
     display: grid;
+    height: 100vh;
     background-image: url("background.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-position:center;
+    background-size: 100% 110%;
     background-attachment: fixed;
-    /* align-items: center; */
-    padding-bottom: 270px;
-    /* margin-bottom: 100px; */
+}
+
+h1 {
+    padding-top: 3%;
+    font-size: 50px;
+    font-family: 'Nerko One', Verdana, Arial;
+    color: white;
 }
 
 #gameArea {
-    /* align-items: center; */
+    margin-top: -15%;
+    margin-left: 15%;
+    height: 100%;
+    width: 75%;
     display: grid;
     grid-template-columns: auto auto;
 }
-/* 
-.grid-item {
-    margin: 0px;
-    padding: 10px;
-} */
-
-#playerStats {
-    margin-right: 0px;
-}
-
-#question {
-    margin-left: 0;
-} 
