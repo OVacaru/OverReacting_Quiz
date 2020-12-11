@@ -1,31 +1,32 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    text-align: center;
+    align-items: center;
+}
+
 .answer {
-    padding: 25px;
+    width: 25%;
     color: white;
     font-size: 20px;
     border-radius: 5px;
-    background-color: rgba(113, 210, 235, 0.781);
+    background-color: rgba(113, 210, 235, 0.5);
     border-style: none;
     margin: 5px;
-    align-items: right;
 }
 
 #questionComponent {
+    padding: 20px;
+    height: 100%;
     display: inline-block;
-    margin-left: 200px;
-    /* grid-template-columns: auto auto;
-    grid-template-rows: auto auto; */
 }
 
 .answerForm {
-    display: grid;
-    margin-left: 200px;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .turn {
     color: white;
     font-size: 20px;
-    margin-top: 0;
-    text-align: center;
 }

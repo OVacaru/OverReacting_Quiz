@@ -1,9 +1,21 @@
-#resultsPage {
-    display: grid;
-    grid-template-columns: auto auto;
-
+* {
+    box-sizing: border-box;
+    margin: 0;
+    text-align: center;
     align-items: center;
-    margin-right: 50px;
+}
+
+#resultsPage {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+h1 {
+    padding-top: 3%;
+    font-size: 50px;
+    font-family: 'Nerko One', Verdana, Arial;
+    color: white;
 }
 
 #playAgain {

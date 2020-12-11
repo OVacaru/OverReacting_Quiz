@@ -1,19 +1,25 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    text-align: center;
+    align-items: center;
 }
 
 #optionPage {
-    /* display: grid; */
+    display: grid;
+    height: 100vh;
     background-image: url("./background.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-position:center;
+    background-size: 100% 110%;
     background-attachment: fixed;
-    padding-bottom: 80px;
 }
 
-#optionsForm {
-    margin-top: 70px;
+h1 {
+    padding-top: 3%;
+    font-size: 50px;
+    font-family: 'Nerko One', Verdana, Arial;
+    color: white;
 }
 
 .optionsBtn {
@@ -33,24 +39,8 @@
     color: white;
 }
 
-.startBtn {
-    background-color: rgb(238, 111, 227);
-    padding: 20px;
-    border-radius: 30px;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    font-size: 30px;
-    margin-left: 38%;
-}
-
-.startBtn:hover {
-    font-weight: bold;
-}
-
 .formLine {
     padding: 15px;
-    text-align: center;
     color: white;
     font-weight: bold;
     padding: 20px;
