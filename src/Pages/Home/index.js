@@ -8,8 +8,8 @@ class Home extends Component {
                 <h1> The Over Reacting Quiz </h1>
                 <button> <Link to='/options'> Start </Link> </button>
             </div>
-        )
-    }
-}
+        );
+    };
+};
 
 export default Home;

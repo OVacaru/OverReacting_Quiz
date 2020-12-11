@@ -5,7 +5,6 @@ class AddPlayer extends Component {
         playerName: "Player " + (this.props.counter+1),
     };
 
-    // Controlling form input values, storing them in state   
     handleInputChange = e => this.setState({ playerName: e.target.value });
   
     render() {

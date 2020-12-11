@@ -21,7 +21,7 @@ const Reducer = (state = initState, action) => {
                 return { ...state, currentPlayer: 0 }; 
             } else {
                 return { ...state, currentPlayer: state.currentPlayer += 1 };
-            }
+            };
         case 'NEXT_QUESTION':
             return { ...state, questionID: state.questionID += 1 };
         case 'RESET_GAME':
