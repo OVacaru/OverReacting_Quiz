@@ -38,8 +38,6 @@ describe('Reducer', () => {
         let fakePlayerID = 1;
         returnState = Reducer(undefined, {type: 'INCREASE_PLAYER_SCORE', payload: fakePlayerID })
         expect(returnState.players[1].score).toBe(1);
-
-
     })
 
     it('loads next player', () => {
