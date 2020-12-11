@@ -1,8 +1,10 @@
 import Question from './index';
 import { shallow } from 'enzyme';
+import { sinon } from 'sinon';
+import { TestScheduler } from 'jest';
 
 describe('Question', () => {
-    let wrapper, handleSubmitMock, nextQuestionMock, inputs, form;
+    let wrapper, handleSubmitMock, nextQuestionMock, nextPlayerMock, nextPlayerScoreMock, inputs, form;
 
     beforeEach(() => {
         handleSubmitMock = jest.fn();
@@ -18,29 +20,40 @@ describe('Question', () => {
         wrapper = shallow(<Question.WrappedComponent 
             {...stub} 
             nextQuestion={nextQuestionMock}
+            nextPlayer={nextPlayerMock}
+            increasePlayerScore={nextPlayerScoreMock}
              />);
         form = wrapper.find('form');
     });
 
-    test('it renders a form', () => {
+    it('renders a form', () => {
         expect(form).toHaveLength(1);
     });
 
-    test('it renders two submit inputs if True or False question', () => {
+    it('renders two submit inputs if True or False question', () => {
         wrapper.setProps({ type: 'boolean'})
         inputs = form.find('input')
         expect(inputs).toHaveLength(4)
     });
 
-    test('it renders four submit inputs if multiple choice question', () => {
+    it('renders four submit inputs if multiple choice question', () => {
         wrapper.setProps({ type: 'multiple'})
         inputs = form.find('input')
         expect(inputs).toHaveLength(4)
     });
 
-    test('it calls handleSubmit (and nextQuestion) on form submission', (e) => {
-        wrapper.setProps({ userAnswer: "cheese", correct_answer: "cheese" })
-        form.simulate('submit', {preventDefault: jest.fn()})
+    it('calls handleSubmit (and nextQuestion) on form submission', (e) => {
+        input1 = form.find('input').first()
+        input1.simulate('click', {preventDefault: jest.fn()})
         expect(handleSubmitMock.mock.calls.length).toBe(1)
+    })
+
+    test('shuffleArray shuffles array', () => {
+        let arr = [1, 2, 3, 4]
+        const instance = wrapper.instance()
+        const shuffleArray = sinon.spy(instance, 'shuffleArray')
+        arr.simulate('mount')
+        expect(shuffleArray.calledOnce).toBe(true);
+        expect(shuffledArray).not.toBe(arr)
     })
 })
