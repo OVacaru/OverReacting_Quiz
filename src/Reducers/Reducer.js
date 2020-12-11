@@ -1,5 +1,4 @@
 const initState = {
-
     totalPlayers: 0,
     currentPlayer: 0,
     players: [],

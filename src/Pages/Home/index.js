@@ -1,33 +1,31 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PopUp from '../../Components/PopUp';
-import './style.css';
+// import './style.css';
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
             showPopup: false
-        }
-    }
+        };
+    };
         
     togglePopup() {
         this.setState({
             showPopup: !this.state.showPopup
-        })
-    }
+        });
+    };
 
     render() {
         return (
             <div id="homePage">
                 <h1> The Over Reacting Quiz </h1>
-                
                 {/* <button id="startBtn">  */}
                 <Link to='/options' className="startBtn"> START </Link> 
                 {/* </button> */}
                 <div className="rules">
                 <button id="rulesBtn" onClick={this.togglePopup.bind(this)}> Rules</button>  
-
                 {this.state.showPopup ?
                 <PopUp 
                     text='Rules:
@@ -39,7 +37,6 @@ class Home extends Component {
                 : null
                 }
                 </div>
-                
             </div>
         );
     };
