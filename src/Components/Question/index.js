@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { nextQuestion, nextPlayer, increasePlayerScore} from "../../Actions";
 import { connect } from 'react-redux';
 import { mSTP } from '../../Pages/Game';
+import './style.css';
 
 class Question extends Component {
 
@@ -40,18 +41,18 @@ class Question extends Component {
         const randomAnswer = this.shuffleArray(allAnswers);
         return (
             <div id="questionComponent">
-                <p> it is {playerData.stats.name} turn!</p>
+                <p className="turn"> it is {playerData.stats.name} turn!</p>
                 <h1>{ questionData.question } </h1> <br/>
                 {questionData.type === "boolean" ? 
-                    <form>
-                        <input type="submit" value="True" onClick={this.handleSubmit}/> <br/>
-                        <input type="submit" value="False" onClick={this.handleSubmit}/> <br/>
+                    <form className="answerForm">
+                        <input type="submit" className="answer" value="True" onClick={this.handleSubmit}/> <br/>
+                        <input type="submit" className="answer" value="False" onClick={this.handleSubmit}/> <br/>
                     </form> :
-                    <form>
-                        <input type="submit" value={ randomAnswer[0] } onClick={this.handleSubmit} /> <br/>
-                        <input type="submit" value={ randomAnswer[1] } onClick={this.handleSubmit} /> <br/>
-                        <input type="submit" value={ randomAnswer[2] } onClick={this.handleSubmit} /> <br/>
-                        <input type="submit" value={ randomAnswer[3] } onClick={this.handleSubmit} /> <br/>
+                    <form className="anwerForm">
+                        <input type="submit" className="answer" value={ randomAnswer[0] } onClick={this.handleSubmit} /> <br/>
+                        <input type="submit" className="answer" value={ randomAnswer[1] } onClick={this.handleSubmit} /> <br/>
+                        <input type="submit" className="answer" value={ randomAnswer[2] } onClick={this.handleSubmit} /> <br/>
+                        <input type="submit" className="answer" value={ randomAnswer[3] } onClick={this.handleSubmit} /> <br/>
                     </form>
                 }
             </div>

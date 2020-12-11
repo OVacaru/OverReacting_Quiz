@@ -10,6 +10,7 @@
     background-image: url("background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     align-items: center;
     padding-bottom: 150px;
 }
@@ -30,7 +31,7 @@ h1 {
     border-radius: 20%;
     text-decoration: none;
     width: 300px;
-    margin-top: 250px;
+    margin-top: 150px;
     border-style: none;
     color: white;
 }

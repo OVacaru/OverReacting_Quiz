@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { mSTP } from '../../Pages/Game';
+import './style.css';
 
 class Player extends Component {
 

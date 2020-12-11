@@ -1,18 +1,19 @@
 * {
     box-sizing: border-box;
-    margin: auto;
+    margin: 0;
 }
 
 #optionPage {
     /* display: grid; */
-    background-image: url("background.jpg");
+    background-image: url("./background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    padding-bottom: 170px;
+    background-attachment: fixed;
+    padding-bottom: 80px;
 }
 
 #optionsForm {
-    margin-top: 140px;
+    margin-top: 70px;
 }
 
 .optionsBtn {
@@ -27,9 +28,9 @@
     font-weight: bold;
 }
 
-.numberInput {
-    width: 40px;
-    height: 20px;
+.ready {
+    font-size: 30px;
+    color: white;
 }
 
 .startBtn {
@@ -48,7 +49,7 @@
 }
 
 .formLine {
-    padding: 20px;
+    padding: 15px;
     text-align: center;
     color: white;
     font-weight: bold;
