@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './style.css';
+// import './style.css';
 
 class PopUp extends Component {
     render() {
@@ -11,8 +11,8 @@ class PopUp extends Component {
                     <button id="closeBtn" onClick={this.props.closePopup}>Close</button>
                 </div>
             </div>
-        )
-    }
-}
+        );
+    };
+};
 
 export default PopUp;
