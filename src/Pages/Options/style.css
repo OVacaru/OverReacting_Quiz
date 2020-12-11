@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+#optionPage {
+    /* display: grid; */
+    background-image: url("./background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-bottom: 80px;
+}
+
+#optionsForm {
+    margin-top: 70px;
+}
+
+.optionsBtn {
+    padding: 12px;
+    background-color: rgba(113, 210, 235, 0.781);
+    border-radius: 30px;
+    border-style: none;
+    color: white;
+}
+
+.optionsBtn:hover {
+    font-weight: bold;
+}
+
+.ready {
+    font-size: 30px;
+    color: white;
+}
+
+.startBtn {
+    background-color: rgb(238, 111, 227);
+    padding: 20px;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 30px;
+    margin-left: 38%;
+}
+
+.startBtn:hover {
+    font-weight: bold;
+}
+
+.formLine {
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+    font-size: 20px;
+}

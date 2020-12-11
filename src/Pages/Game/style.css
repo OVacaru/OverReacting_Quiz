@@ -1,0 +1,29 @@
+#gamePage {
+    display: grid;
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /* align-items: center; */
+    padding-bottom: 270px;
+    /* margin-bottom: 100px; */
+}
+
+#gameArea {
+    /* align-items: center; */
+    display: grid;
+    grid-template-columns: auto auto;
+}
+/* 
+.grid-item {
+    margin: 0px;
+    padding: 10px;
+} */
+
+#playerStats {
+    margin-right: 0px;
+}
+
+#question {
+    margin-left: 0;
+} 
