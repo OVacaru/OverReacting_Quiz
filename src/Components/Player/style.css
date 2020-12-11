@@ -1,0 +1,11 @@
+#playerTable {
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+}
+
+th, td {
+    border: 1px solid rgb(230, 117, 220);
+    padding: 20px;
+    background-color: black;
+}

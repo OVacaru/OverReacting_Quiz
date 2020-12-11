@@ -4,6 +4,7 @@ import { Link} from 'react-router-dom';
 import { resetGame } from '../../Actions';
 import Player from '../../Components/Player';
 import { mSTP } from '../Game';
+import './style.css';
 
 class Results extends Component {
     
@@ -27,7 +28,7 @@ class Results extends Component {
                 <h1>Results</h1>
                 <Player playerStats={this.props.winner}/>
                  {this.displayWinner()}
-                <Link to='/'> Play Again! </Link>
+                <Link id="playAgain" to='/'> Play Again! </Link>
             </div>
         );
     };
