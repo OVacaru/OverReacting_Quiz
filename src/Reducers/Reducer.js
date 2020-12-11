@@ -25,7 +25,7 @@ const Reducer = (state = initState, action) => {
         case 'NEXT_QUESTION':
             return { ...state, questionID: state.questionID += 1 };
         case 'RESET_GAME':
-            return {... state};
+            return initState;
         case 'SET_ERROR':
             return { ...state, error: action.payload };
         default:

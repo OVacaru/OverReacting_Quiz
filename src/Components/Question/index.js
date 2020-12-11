@@ -41,7 +41,7 @@ class Question extends Component {
         const randomAnswer = this.shuffleArray(allAnswers);
         return (
             <div id="questionComponent">
-                <p className="turn"> it is {playerData.stats.name} turn!</p>
+                <p className="turn"> It is {playerData.stats.name} turn!</p>
                 <h1>{ questionData.question } </h1> <br/>
                 {questionData.type === "boolean" ? 
                     <form className="answerForm">
