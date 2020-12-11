@@ -16,7 +16,7 @@ class Game extends Component {
                     <Results winner={this.props.players}/> :
                     <div id="gameArea">
                         <div id="playerStats" className="grid-item">
-                        <Player playerStats={ this.props.players } currentPlayer={this.props.currentPlayer}/>
+                        <Player playerStats={ this.props.players } currentQuestion={this.props.questions[this.props.questionID]}/>
                         </div>
                         <div id="question" className="grid-item">
                         <Question 
